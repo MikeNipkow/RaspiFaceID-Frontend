@@ -9,7 +9,7 @@ interface Props {
 
 const Main = ({ selectedTab }: Props) => {
   return (
-    <Box paddingY={"20px"} margin="auto auto">
+    <Box paddingY={"5px"}>
       {(() => {
         switch (selectedTab) {
           case "Zugang":

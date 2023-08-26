@@ -1,4 +1,4 @@
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Divider, Grid, GridItem } from "@chakra-ui/react";
 import Main from "./components/Main";
 import NavBar from "./components/NavBar";
 import { Tabs } from "./components/TabSelector";
@@ -16,7 +16,7 @@ function App() {
       templateColumns={{ base: "1fr" }}
       templateRows={"50px auto"}
     >
-      <GridItem margin={"auto 0"} area={"nav"}>
+      <GridItem area={"nav"}>
         <NavBar
           onSelectTab={(tab) => setSelectedTab(tab)}
           selectedTab={selectedTab}

@@ -31,7 +31,7 @@ const AuthorizedGrid = () => {
   return (
     <>
       <form onSubmit={(event) => handleCreate(event)}>
-        <HStack paddingBottom="10px" width="60%" marginX="auto">
+        <HStack paddingBottom="5px" width="60%" marginX="auto">
           <Input
             ref={nameRef}
             type="text"
@@ -44,6 +44,7 @@ const AuthorizedGrid = () => {
       <Grid
         templateColumns={{ base: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }}
         gap="2"
+        paddingTop={"5px"}
       >
         {data?.map((authorized) => (
           <AuthorizedCard

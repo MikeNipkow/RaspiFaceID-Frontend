@@ -3,6 +3,8 @@ import {
   Card,
   CardBody,
   CardHeader,
+  Grid,
+  GridItem,
   HStack,
   Image,
   Text,
@@ -25,12 +27,23 @@ const AuthorizedCard = ({ authorized, onDelete }: Props) => {
         />
       </CardHeader>
       <CardBody>
-        <HStack justifyContent="space-between">
-          <Text fontWeight="bold">{authorized.name} </Text>
-          <Button onClick={onDelete} colorScheme="red">
-            Löschen
-          </Button>
-        </HStack>
+        <Grid
+          templateAreas={{ base: `"info" "button"`, lg: `"info button"` }}
+          gap={3}
+        >
+          <GridItem
+            textAlign={{ base: "center", lg: "left" }}
+            lineHeight={"1.2"}
+            margin={{ base: "auto auto", lg: "auto auto auto 0" }}
+          >
+            <Text fontWeight="bold">{authorized.name} </Text>
+          </GridItem>
+          <GridItem margin={{ base: "auto auto", lg: "auto 0 auto auto" }}>
+            <Button onClick={onDelete} colorScheme="red">
+              Löschen
+            </Button>
+          </GridItem>
+        </Grid>
       </CardBody>
     </Card>
   );

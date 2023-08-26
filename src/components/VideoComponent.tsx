@@ -4,9 +4,9 @@ import { config } from "../services/api-client";
 const VideoComponent = () => {
   return (
     <Image
-      margin={"auto auto"}
+      margin={"auto"}
       maxHeight={{ base: "90vh", sm: "80vh", lg: "90vh" }}
-      borderRadius={"20px"}
+      borderRadius={"10px"}
       src={config.videoUrl}
     />
   );
