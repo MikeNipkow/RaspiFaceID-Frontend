@@ -1,9 +1,9 @@
-import useData from "./useData"
+import useData, { deleteData } from "./useData"
 
 
 export interface History {
-    endpoint: string,
     name: string,
+    file: string,
     timestamp: {
         year: number,
         month: number,
@@ -15,5 +15,6 @@ export interface History {
 }
 
 const useHistory = () => useData<History[]>("/history")
+export const deleteHistory = (file: string, onResponse?: (data: History[]) => void) => deleteData<History[]>("/history/" + file, onResponse)
 
 export default useHistory

@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import HistoryGrid from "./HistoryGrid";
 import VideoComponent from "./VideoComponent";
+import AuthorizedGrid from "./AuthorizedGrid";
 
 interface Props {
   selectedTab: string;
@@ -10,10 +11,13 @@ const Main = ({ selectedTab }: Props) => {
   return (
     <Box paddingY={"20px"} margin="auto auto">
       {(() => {
-        console.log(selectedTab);
         switch (selectedTab) {
-          case "History":
+          case "Zugang":
             return <HistoryGrid />;
+            break;
+
+          case "Berechtigung":
+            return <AuthorizedGrid />;
             break;
 
           default:

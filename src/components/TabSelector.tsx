@@ -1,7 +1,7 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
 
-export const Tabs = ["Video", "History"];
+export const Tabs = ["Video", "Zugang", "Berechtigung"];
 
 export interface Props {
   onSelectTab: (tab: string) => void;

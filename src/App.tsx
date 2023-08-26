@@ -22,7 +22,7 @@ function App() {
           selectedTab={selectedTab}
         />
       </GridItem>
-      <GridItem margin={"auto"} area={"main"}>
+      <GridItem area={"main"}>
         <Main selectedTab={selectedTab} />
       </GridItem>
     </Grid>
