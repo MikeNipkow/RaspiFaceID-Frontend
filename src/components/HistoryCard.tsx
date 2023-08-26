@@ -5,10 +5,8 @@ import {
   CardHeader,
   Grid,
   GridItem,
-  HStack,
   Image,
   Text,
-  VStack,
 } from "@chakra-ui/react";
 import { History } from "../hooks/useHistory";
 import { config } from "../services/api-client";

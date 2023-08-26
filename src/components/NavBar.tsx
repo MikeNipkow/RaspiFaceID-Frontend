@@ -4,7 +4,6 @@ import {
   Grid,
   GridItem,
   HStack,
-  Hide,
   Show,
   Text,
 } from "@chakra-ui/react";

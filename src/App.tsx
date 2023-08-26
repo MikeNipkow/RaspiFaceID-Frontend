@@ -1,4 +1,4 @@
-import { Divider, Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import Main from "./components/Main";
 import NavBar from "./components/NavBar";
 import { Tabs } from "./components/TabSelector";
