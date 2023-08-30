@@ -2,6 +2,7 @@ import { Box } from "@chakra-ui/react";
 import HistoryGrid from "./HistoryGrid";
 import VideoComponent from "./VideoComponent";
 import AuthorizedGrid from "./AuthorizedGrid";
+import { config } from "../services/api-client";
 
 interface Props {
   selectedTab: string;
@@ -21,7 +22,7 @@ const Main = ({ selectedTab }: Props) => {
             break;
 
           default:
-            return <VideoComponent />;
+            return <VideoComponent videoUrl={config.videoUrl} />;
         }
       })()}
     </Box>
