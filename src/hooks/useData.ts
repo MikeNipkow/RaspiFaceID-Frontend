@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 import { AxiosRequestConfig, CanceledError } from "axios";
 
-export const deleteData = <T>(endpoint: string, onResponse?: (data: T) => void, requestConfig?: AxiosRequestConfig) => {
+export const deleteData = <T>(endpoint: string, onResponse?: (data: T, error) => void, requestConfig?: AxiosRequestConfig) => {
   const controller = new AbortController();
 
   apiClient

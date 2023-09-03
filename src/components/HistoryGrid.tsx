@@ -1,9 +1,12 @@
 import useHistory, { History, deleteHistory } from "../hooks/useHistory";
+import CardSkeleton from "./CardSkeleton";
 import HistoryCard from "./HistoryCard";
-import { Grid } from "@chakra-ui/react";
+import { Alert, AlertIcon, Grid } from "@chakra-ui/react";
 
 const HistoryGrid = () => {
-  const { data, setData } = useHistory();
+  const { data, setData, isLoading, error } = useHistory();
+
+  const skeletons = [1, 2, 3, 4, 5, 6];
 
   const handleDelete = (history: History) => {
     if (history == null) return;
@@ -12,10 +15,17 @@ const HistoryGrid = () => {
   };
 
   return (
+    <>
+    {error && <Alert status="error"><AlertIcon/>Historie konnte nicht geladen werden.</Alert>}
     <Grid
       templateColumns={{ base: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }}
       gap="2"
     >
+      {isLoading &&
+        skeletons.map(() => (
+            <CardSkeleton />
+        ))}
+        
       {data?.map((history) => (
         <HistoryCard
           onDelete={() => handleDelete(history)}
@@ -23,7 +33,9 @@ const HistoryGrid = () => {
           history={history}
         ></HistoryCard>
       ))}
+      
     </Grid>
+    </>
   );
 };
 

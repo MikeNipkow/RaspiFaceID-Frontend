@@ -6,10 +6,12 @@ import {
   Grid,
   GridItem,
   Image,
+  Skeleton,
   Text,
 } from "@chakra-ui/react";
 import { History } from "../hooks/useHistory";
 import { config } from "../services/api-client";
+import { useState } from "react";
 
 interface Props {
   history: History;
@@ -17,11 +19,15 @@ interface Props {
 }
 
 const HistoryCard = ({ history, onDelete }: Props) => {
+  const [loading, setLoading] = useState(true);
+
   return (
     <Card>
       <CardHeader paddingBottom="0" margin="auto">
-        <Image
+        {loading && <Skeleton height="200px" />}
+        <Image maxHeight="200px" width="auto"
           borderRadius={"6px"}
+          onLoad={() => setLoading(false)}
           src={`${config.apiBaseUrl}/history/${history.file}`}
         />
       </CardHeader>

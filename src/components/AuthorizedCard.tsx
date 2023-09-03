@@ -6,10 +6,12 @@ import {
   Grid,
   GridItem,
   Image,
+  Skeleton,
   Text,
 } from "@chakra-ui/react";
 import { config } from "../services/api-client";
 import { Authorized } from "../hooks/useAuthorized";
+import { useState } from "react";
 
 interface Props {
   authorized: Authorized;
@@ -17,11 +19,15 @@ interface Props {
 }
 
 const AuthorizedCard = ({ authorized, onDelete }: Props) => {
+  const [loading, setLoading] = useState(true);
+  
   return (
     <Card>
-      <CardHeader paddingBottom="0">
-        <Image
+      <CardHeader paddingBottom="0" margin="auto">
+        {loading && <Skeleton height="200px" />}
+        <Image maxHeight="200px" width="auto"
           borderRadius={"6px"}
+          onLoad={() => setLoading(false)}
           src={`${config.apiBaseUrl}/authorized/${authorized.file}`}
         />
       </CardHeader>
